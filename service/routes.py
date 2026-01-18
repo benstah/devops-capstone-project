@@ -75,8 +75,20 @@ def list_accounts():
 ######################################################################
 # READ AN ACCOUNT
 ######################################################################
+@app.route("/accounts/<int:account_id>", methods=["GET"])
+def get_accounts(account_id):
+    """Retrieve a single Account"""
+    app.logger.info("Request to read Account with id: %s", account_id)
 
-# ... place you code here to READ an account ...
+    account = Account.find(account_id)
+    if not account:
+        abort(
+            status.HTTP_404_NOT_FOUND,
+            f"Account with id '{account_id}' was not found.",
+        )
+
+    return jsonify(account.serialize()), status.HTTP_200_OK
+
 
 
 ######################################################################
