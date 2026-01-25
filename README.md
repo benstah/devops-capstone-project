@@ -1,5 +1,7 @@
 # DevOps Capstone Project
 
+![Build Status](https://github.com/benstah/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)
+
 The DevOps Capstone Project is about developing an account microservice to keep track of the customers on an e-commerce website.
 
 ## Development Environment
